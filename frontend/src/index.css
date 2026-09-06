@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-canvas: #e2e9f5;
+  --color-surface: #ffffff;
+  --color-ink: #1b1b2f;
+  --color-accent: #10767a;
+  --color-volt: #b45309;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+.dark {
+  --color-canvas: #15121f;
+  --color-surface: #1f1b2e;
+  --color-ink: #f3efe9;
+  --color-accent: #f2617a;
+  --color-volt: #fbbf24;
+}
+
+body {
+  background-color: var(--color-canvas);
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-ink) 22%, transparent) 1.2px,
+    transparent 1.2px
+  );
+  background-size: 20px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.dark body {
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--color-ink) 10%, transparent) 1.2px,
+    transparent 1.2px
+  );
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.35s ease-out;
+}
+
+@keyframes check-pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-check {
+  animation: check-pop 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pop-in,
+  .animate-check {
+    animation: none;
+  }
+}
