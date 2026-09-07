@@ -13,9 +13,10 @@ export default function UrlCard({ url, isNew, isRemoving, onDelete }) {
   const [confirming, setConfirming] = useState(false);
   const [copied, setCopied] = useState(false);
 
+  const shortUrl = `${import.meta.env.VITE_API_URL}/${url.shortCode}`;
+
   const handleCopy = () => {
-    const link = `http://localhost:5000/${url.shortCode}`;
-    navigator.clipboard.writeText(link);
+    navigator.clipboard.writeText(shortUrl);
     toast.success("Copied to clipboard!");
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
@@ -53,7 +54,7 @@ export default function UrlCard({ url, isNew, isRemoving, onDelete }) {
             <button
               onClick={onDelete}
               className="p-1 rounded-md bg-red-500 text-white hover:bg-red-600 transition-colors"
-              aria-label="Confirm hide"
+              aria-label="Confirm delete"
             >
               <Check size={13} />
             </button>
@@ -70,12 +71,14 @@ export default function UrlCard({ url, isNew, isRemoving, onDelete }) {
         <>
           <div className="flex items-center justify-between gap-2">
             <a
-              href={`http://localhost:5000/${url.shortCode}`}
+              href={shortUrl}
               target="_blank"
               rel="noreferrer"
               className="font-mono text-sm text-accent flex items-center gap-1.5 min-w-0 truncate"
             >
-              <span className="truncate">localhost:5000/{url.shortCode}</span>
+              <span className="truncate">
+                {shortUrl.replace(/^https?:\/\//, "")}
+              </span>
               <ExternalLink size={13} className="shrink-0" />
             </a>
 
