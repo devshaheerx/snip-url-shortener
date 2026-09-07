@@ -1,6 +1,6 @@
 # 🔗 Snip — URL Shortener
 
-A full-stack MERN application for shortening long URLs into shareable links, with custom aliases, link expiration, click analytics, and a dark/light mode interface.
+A full-stack MERN application for shortening long URLs into shareable links, with custom aliases, link expiration, click tracking, and a fully responsive dark/light mode interface.
 
 ## ✨ Features
 
@@ -8,15 +8,16 @@ A full-stack MERN application for shortening long URLs into shareable links, wit
 - **Custom aliases** — choose your own short code instead of a random one
 - **Link expiration** — set links to auto-expire after a chosen number of days
 - **Click tracking** — every visit to a short link increments its click count
-- **Soft delete** — hide links from your view without permanently losing the record
-- **Dark / light mode** — theme toggle with saved preference across visits
-- **Toast notifications** — instant feedback on every action, no jarring browser alerts
+- **Delete links** — remove links permanently with an inline confirm (no browser popups)
+- **Dark / light mode** — theme toggle with saved preference across visits, each mode with its own distinct color palette
+- **Fully responsive** — works cleanly from mobile (375px) up to desktop
+- **Toast notifications** — instant feedback on every action
 
 ## 🛠️ Tech Stack
 
 **Frontend**
 - React (Vite)
-- Tailwind CSS
+- Tailwind CSS v4
 - React Router DOM
 - Axios
 - React Hot Toast
@@ -39,7 +40,7 @@ url-shortener/
 
 ### Prerequisites
 - Node.js installed
-- A MongoDB connection string (local or Atlas)
+- A MongoDB connection string (MongoDB Atlas recommended)
 
 ### Backend Setup
 ```bash
@@ -68,13 +69,17 @@ The app will be available at `http://localhost:5173`, connecting to the API at `
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | `POST` | `/api/urls` | Create a new short URL |
-| `GET` | `/api/urls` | Get all (non-hidden) URLs |
-| `PATCH` | `/api/urls/:id/hide` | Hide a URL (soft delete) |
+| `GET` | `/api/urls` | Get all URLs |
+| `DELETE` | `/api/urls/:id` | Permanently delete a URL |
 | `GET` | `/:shortCode` | Redirect to the original URL |
 
 ## 🖼️ Preview
 
-*(Add a screenshot or GIF of the app here once ready — this is one of the first things recruiters look at)*
+*(Add a screenshot or GIF of the app here — light mode and dark mode side by side works well)*
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
