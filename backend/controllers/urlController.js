@@ -29,31 +29,27 @@ export const createShortUrl = async (req, res) => {
   }
 };
 
-// Get all URLs (excluding hidden)
+// Get all URLs
 export const getAllUrls = async (req, res) => {
   try {
-    const urls = await Url.find({ hidden: false }).sort({ createdAt: -1 });
+    const urls = await Url.find().sort({ createdAt: -1 });
     res.json(urls);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 };
 
-// Hide a URL (soft delete — record stays in DB)
-export const hideUrl = async (req, res) => {
+// Delete a URL permanently
+export const deleteUrl = async (req, res) => {
   try {
     const { id } = req.params;
-    const updated = await Url.findByIdAndUpdate(
-      id,
-      { hidden: true },
-      { new: true },
-    );
+    const deleted = await Url.findByIdAndDelete(id);
 
-    if (!updated) {
+    if (!deleted) {
       return res.status(404).json({ message: "Link not found" });
     }
 
-    res.json({ message: "Link hidden", url: updated });
+    res.json({ message: "Link deleted" });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

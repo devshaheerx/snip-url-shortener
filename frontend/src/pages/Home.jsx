@@ -35,11 +35,11 @@ export default function Home() {
     setRemovingId(id);
     setTimeout(async () => {
       try {
-        await api.patch(`/urls/${id}/hide`);
+        await api.delete(`/urls/${id}`);
         setUrls((prev) => prev.filter((u) => u._id !== id));
-        toast.success("Link hidden");
+        toast.success("Link deleted");
       } catch {
-        toast.error("Failed to hide link");
+        toast.error("Failed to delete link");
       } finally {
         setRemovingId(null);
       }
@@ -48,13 +48,13 @@ export default function Home() {
 
   return (
     <div className="min-h-screen transition-colors">
-      <div className="max-w-lg mx-auto px-6 py-10">
-        <header className="flex items-center justify-between mb-12">
+      <div className="max-w-lg mx-auto px-4 sm:px-6 py-8 sm:py-10">
+        <header className="flex items-center justify-between mb-8 sm:mb-12">
           <div className="flex items-center gap-2">
             <div className="p-1.5 rounded-lg bg-accent text-white">
               <Link2 size={18} />
             </div>
-            <span className="font-display font-bold text-lg text-ink">
+            <span className="font-display font-bold text-base sm:text-lg text-ink">
               Snip
             </span>
           </div>
@@ -62,7 +62,7 @@ export default function Home() {
         </header>
 
         <div className="mb-6">
-          <h1 className="font-display font-bold text-2xl text-ink mb-1">
+          <h1 className="font-display font-bold text-xl sm:text-2xl text-ink mb-1">
             Shorten a link
           </h1>
           <p className="text-sm text-ink/60">

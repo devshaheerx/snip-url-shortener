@@ -33,7 +33,7 @@ export default function UrlForm({ onCreated }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-3 p-5 bg-surface border-2 border-ink rounded-2xl shadow-[4px_4px_0_0_var(--color-ink)]"
+      className="flex flex-col gap-3 p-4 sm:p-5 bg-surface border-2 border-ink rounded-2xl shadow-[4px_4px_0_0_var(--color-ink)]"
     >
       <label className="flex items-center gap-2 border border-ink/20 rounded-lg px-3 py-2 focus-within:border-accent transition-colors">
         <Link2 size={18} className="text-ink/40 shrink-0" />

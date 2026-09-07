@@ -30,7 +30,9 @@ export default function UrlCard({ url, isNew, isRemoving, onDelete }) {
       <span className="absolute left-0 top-0 bottom-0 w-1 bg-accent" />
 
       <div className="flex items-start justify-between gap-2">
-        <p className="text-sm text-ink/50 truncate">{url.originalUrl}</p>
+        <p className="text-sm text-ink/50 truncate min-w-0">
+          {url.originalUrl}
+        </p>
         {!confirming && (
           <button
             onClick={() => setConfirming(true)}
@@ -43,9 +45,11 @@ export default function UrlCard({ url, isNew, isRemoving, onDelete }) {
       </div>
 
       {confirming ? (
-        <div className="flex items-center justify-between bg-red-500/5 border border-red-500/20 rounded-lg px-3 py-2 animate-pop-in">
-          <span className="text-xs text-ink/70">Hide this link?</span>
-          <div className="flex items-center gap-2">
+        <div className="flex items-center justify-between gap-2 bg-red-500/5 border border-red-500/20 rounded-lg px-3 py-2 animate-pop-in">
+          <span className="text-xs text-ink/70">
+            Delete this link permanently?
+          </span>
+          <div className="flex items-center gap-2 shrink-0">
             <button
               onClick={onDelete}
               className="p-1 rounded-md bg-red-500 text-white hover:bg-red-600 transition-colors"
@@ -64,20 +68,20 @@ export default function UrlCard({ url, isNew, isRemoving, onDelete }) {
         </div>
       ) : (
         <>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-2">
             <a
               href={`http://localhost:5000/${url.shortCode}`}
               target="_blank"
               rel="noreferrer"
-              className="font-mono text-sm text-accent flex items-center gap-1.5"
+              className="font-mono text-sm text-accent flex items-center gap-1.5 min-w-0 truncate"
             >
-              localhost:5000/{url.shortCode}
-              <ExternalLink size={13} />
+              <span className="truncate">localhost:5000/{url.shortCode}</span>
+              <ExternalLink size={13} className="shrink-0" />
             </a>
 
             <button
               onClick={handleCopy}
-              className="text-ink/40 hover:text-ink transition-colors"
+              className="text-ink/40 hover:text-ink transition-colors shrink-0"
               aria-label="Copy short link"
             >
               {copied ? (

@@ -15,10 +15,9 @@ const urlSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    expiresAt:{ type: Date, default: null },
-    hidden: { type: Boolean, default: false },
+    expiresAt: { type: Date, default: null },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 export default mongoose.model("Url", urlSchema);

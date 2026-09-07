@@ -17,7 +17,6 @@ app.use(morgan("dev"));
 // API routes
 app.use("/api/urls", urlRoutes);
 
-// Redirect route (must come after /api routes)
 app.get("/:shortCode", async (req, res) => {
   try {
     const url = await Url.findOne({ shortCode: req.params.shortCode });
