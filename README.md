@@ -76,12 +76,8 @@ The app will be available at `http://localhost:5173`, connecting to the API at `
 
 *(Add a screenshot or GIF of the app here once ready — this is one of the first things recruiters look at)*
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
 ## 👤 Author
 
 **Syed Shaheer Ahmed**
 - GitHub: [@devshaheerx](https://github.com/devshaheerx)
-- LinkedIn: [syedshaheerahmed](https://linkedin.com/in/syedshaheerahmed)
+- LinkedIn: [syedshaheerahmed](https://www.linkedin.com/in/syed-shaheer-ahmed-505a64332/)
