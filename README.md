@@ -77,11 +77,9 @@ The app will be available at `http://localhost:5173`, connecting to the API at `
 
 ## 🖼️ Preview
 
-*(Add a screenshot or GIF of the app here — light mode and dark mode side by side works well)*
+<img width="950" height="440" alt="image" src="https://github.com/user-attachments/assets/e89b7e6b-4503-4589-a65e-fed9cf4383a8" />
+<img width="1900" height="890" alt="image" src="https://github.com/user-attachments/assets/902c8bf8-dc22-43d9-9939-2cada8f5570a" />
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
