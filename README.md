@@ -32,9 +32,11 @@ A full-stack MERN application for shortening long URLs into shareable links, wit
 - CORS + dotenv
 
 ## 📁 Project Structure
+```
 url-shortener/
 ├── backend/ # Express API + MongoDB models
 └── frontend/ # React + Vite client
+```
 
 ## 🚀 Getting Started
 
