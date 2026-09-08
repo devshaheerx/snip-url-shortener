@@ -13,6 +13,11 @@ A full-stack MERN application for shortening long URLs into shareable links, wit
 - **Fully responsive** — works cleanly from mobile (375px) up to desktop
 - **Toast notifications** — instant feedback on every action
 
+## 🌐 Live Demo
+
+- **App:** [snip-frontend.vercel.app](https://snip-frontend-gamma.vercel.app/)
+- **API:** [snip-backend.vercel.app/api/urls](https://snip-backend.vercel.app/api/urls)
+
 ## 🛠️ Tech Stack
 
 **Frontend**
@@ -77,9 +82,9 @@ The app will be available at `http://localhost:5173`, connecting to the API at `
 
 ## 🖼️ Preview
 
-<img width="950" height="440" alt="image" src="https://github.com/user-attachments/assets/e89b7e6b-4503-4589-a65e-fed9cf4383a8" />
-<img width="1900" height="890" alt="image" src="https://github.com/user-attachments/assets/902c8bf8-dc22-43d9-9939-2cada8f5570a" />
+<img width="1903" height="893" alt="image" src="https://github.com/user-attachments/assets/4df6312f-0caa-4fac-9a2b-1ba616a64ba0" />
 
+<img width="1905" height="887" alt="image" src="https://github.com/user-attachments/assets/1c7189ac-024e-48a6-84a5-0e88bac41f8a" />
 
 ## 👤 Author
 
