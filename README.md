@@ -18,6 +18,8 @@ A full-stack MERN application for shortening long URLs into shareable links, wit
 - **App:** [snip-frontend.vercel.app](https://snip-frontend-gamma.vercel.app/)
 - **API:** [snip-backend.vercel.app/api/urls](https://snip-backend.vercel.app/api/urls)
 
+Note: the backend runs on Vercel's free serverless tier. The first request after inactivity may take a few seconds to respond.
+
 ## 🛠️ Tech Stack
 
 **Frontend**
