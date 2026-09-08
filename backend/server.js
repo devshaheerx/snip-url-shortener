@@ -39,6 +39,8 @@ app.get("/:shortCode", async (req, res) => {
   }
 });
 
+// Vercel runs this as a serverless function and invokes the exported app directly,
+// so app.listen() must only run during local development, not in production.
 if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 5000;
   app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
